@@ -13,5 +13,4 @@ public class Main{
         int difficulty  = console.nextInt();
         return difficulty;
     }
-
 }

@@ -1,5 +1,4 @@
 //import java.util.Random;
-
 public class MathProblem {
    
     public static void createMathProblem_Dif1(){ //makes an easy math problem with randomized operators and integer values
