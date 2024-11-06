@@ -11,7 +11,6 @@ public class MathProblem {
     public static void createMathProblem_Dif3(){ // makes a hard math problem with randomized operators and integer values
         
     }
-
     public static void getMathprobem(int difficulty){
         if (difficulty == 1){   //if the user picks easy, theyre given a randomly chosen easy problem
             createMathProblem_Dif1();
@@ -21,5 +20,4 @@ public class MathProblem {
             createMathProblem_Dif3();
         }
     }
-
 }

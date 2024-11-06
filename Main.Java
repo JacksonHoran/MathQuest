@@ -4,7 +4,6 @@ public class Main{
         getDifficulty();
         MathProblem.getMathprobem(difficulty); // gets a math problem given the isers chosen difficulty
     }
-
     public static int getDifficulty(){
         Scanner console = new Scanner();
         System.out.println("Choose your difficulty by typing the number corresponding to difficulty level.")
