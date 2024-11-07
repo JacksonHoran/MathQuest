@@ -5,12 +5,18 @@ public class game {
 import java.util.Scanner;
 Scanner scanner170 = new Scanner(system.in);
   
-  public static void runGame{ //Asks player if they'd like to start the game, gets value of answer with scanner170, depending on answer "Y" or "N", boolean variable gameRunning will be set to true or false, and either do nothing or start game
-   //ask player Y or N
+  public static void runGame{
+      getUsername(); //ask user for their name, sets variable userName to given input.
+        //Asks player if they'd like to start the game, gets value of answer with scanner170, depending on answer "Y" or "N", boolean variable gameRunning will be set to true or false, and either do nothing or start game
+       //ask player Y or N
    if{ //if the input is Y, the gameRunning variable is set to true, and the game starts.
      while{ //while gameRunning is true, execute game methods
+      
      }
-   }
+      
+      if(ending == true){ //a variable ending will be set from false to true when the player plays through all of the trials and gets one of three endings
+       break
+      }
    else{ //in the event the player says no, "loses", or does anything to make gameRunning false
    }
    
@@ -33,12 +39,6 @@ Scanner scanner170 = new Scanner(system.in);
 
   
     
-
-    
-        
-  
-  
-    while gameRunning == true{ //this will initialize the actual game from the start. If gameRunning is false due to the player losing, it will reset. 
       }
     
     
