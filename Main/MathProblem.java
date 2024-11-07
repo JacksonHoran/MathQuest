@@ -25,6 +25,7 @@ public class MathProblem {
         if (difficulty == 1){   
             createMathProblem_Dif1();
         }else if(difficulty == 2){ 
+           createMathProblem_Dif2();
         }else{  
             createMathProblem_Dif3();
         }
