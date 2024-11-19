@@ -12,15 +12,15 @@ public class Game {
      while{ //while gameRunning is true, execute game methods
       
       if(turns>=3){ //if 3 turns have been played, the ending based on how many points the player got will be shown.
-      }if(points >= 9){  //the next 3 if statements take into account how many "points" the player accrued, and return a specific ending depending on their performance. They also set the ending variable to true.
+      }if(points >= 7){  //the next 3 if statements take into account how many "points" the player accrued, and return a specific ending depending on their performance. They also set the ending variable to true.
         return ending3;
         ending = true;
       }
-      if(points >=6){
+      if(points >=5){
         return ending2;
         ending = true;
 
-      }if(points >= 3){
+      }if(points >= 1){
         return ending1;
         ending = true;
       }
