@@ -12,6 +12,8 @@ public class Path {
          - If so, calls the encounter method for the chosen path.
          - If not, informs the player that the path is clear and allows them to choose another path.
      */
+
+    
     public static void choosePath() {
         System.out.println("Choose a path by entering the number:");
         System.out.println("1 - Left");
@@ -21,23 +23,27 @@ public class Path {
         Scanner console = new Scanner(System.in);
         int pathChoice = console.nextInt();
 
+        int points = 0;
         // Randomly determines if an encounter will happen (50% chance for example)
         boolean encounter = random.nextBoolean();
 
         if (encounter) { // If there's an encounter
             if (pathChoice == 1) {
                 leftPath(); // Calls Left path
+                points += 1;
             } else if (pathChoice == 2) {
                 centerPath(); // Calls Center path
+                points += 2;
             } else if (pathChoice == 3) {
                 rightPath(); // Calls Right path
+                points += 3;
             } else {
-                System.out.println("Invalid choice. Please choose again.");
+                System.out.println("Invalid choice. Please provide valid input.");
                 choosePath(); // Prompts again for a valid path if input is invalid
             }
         } else {
             // If no encounter occurs
-            System.out.println("The path is clear. No monsters sighted. Choose another path.");
+            System.out.println("The path before you is clear. Which path shall you take?");
             choosePath(); // Prompts the player to choose another path
         }
     }
