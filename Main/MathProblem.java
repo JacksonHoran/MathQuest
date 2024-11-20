@@ -128,13 +128,17 @@ public class MathProblem {
                 System.out.println("Correct! You defeated the monster!");
                 return true;
             } else {
-                Main.livesCounter -= 1;
-                // if(Main.livesCounter = 0){
-                // game running boolean to false, ends game
-                // and prints message saying you lost.
-                // }
-                System.out.println("Incorrect! The monster defeated you! try again.");
-                return false;
+                Main.livesCounter -= 1; // Deduct a life for an incorrect answer
+                if (Main.livesCounter <= 0) {
+                    Main.livesCounter = 0; // Ensure lives don't go negative
+                    PreGameInfo.runGame = false; // End the game
+                    System.out.println("Incorrect! The monster defeated you! You have no lives left. Game over!");
+                    return false;
+                } else {
+                    System.out.println(
+                            "Incorrect! The monster defeated you! Try again. Lives remaining: " + Main.livesCounter);
+                    return false;
+                }
             }
         }
     }

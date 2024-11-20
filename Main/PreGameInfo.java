@@ -11,10 +11,13 @@ public class PreGameInfo {
      * then
      * the program ends
      */
-    public static boolean runGame() {
+
+    public static boolean runGame;
+
+    public static void runGameInit() {
         System.out.println("Would you like to start the game? Type yes or no.");
         String userChoice = input.nextLine().toLowerCase();
-        return userChoice.equals("yes");
+        runGame = userChoice.equals("yes");
 
         // refactor such that the boolean is able to be changed throughout the program,
         // in the case that
