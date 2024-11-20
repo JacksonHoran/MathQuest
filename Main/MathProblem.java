@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class MathProblem {
 
@@ -12,8 +11,6 @@ public class MathProblem {
     @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif1() {
         Random random = new Random();
-        Scanner input = new Scanner(System.in);
-
         // gets all the random info
         int num1 = random.nextInt(10) + 1;
         int num2 = random.nextInt(10) + 1;
@@ -31,8 +28,8 @@ public class MathProblem {
         }
 
         // returns whether user is correct or not
-        int userAnswer = input.nextInt();
-        input.close();
+        int userAnswer = PreGameInfo.input.nextInt();
+        PreGameInfo.input.close();
         return userAnswer == result;
     }
 
@@ -45,8 +42,6 @@ public class MathProblem {
     @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif2() {
         Random random = new Random();
-        Scanner input = new Scanner(System.in);
-
         // gets all random info
         int num1 = random.nextInt(10) + 1;
         int num2 = random.nextInt(10) + 1;
@@ -65,8 +60,8 @@ public class MathProblem {
         }
 
         // returns whether user is correct or incorrect
-        int userAnswer = input.nextInt();
-        input.close();
+        int userAnswer = PreGameInfo.input.nextInt();
+        PreGameInfo.input.close();
         return result == userAnswer;
     }
 
@@ -79,7 +74,6 @@ public class MathProblem {
     @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif3() {
         Random random = new Random();
-        Scanner input = new Scanner(System.in);
 
         // gets random info
         int num1 = random.nextInt(12) + 1;
@@ -100,8 +94,8 @@ public class MathProblem {
         }
 
         // returns whether or not the user is correct
-        int userAnswer = input.nextInt();
-        input.close();
+        int userAnswer = PreGameInfo.input.nextInt();
+        PreGameInfo.input.close();
         return result == userAnswer;
     }
 

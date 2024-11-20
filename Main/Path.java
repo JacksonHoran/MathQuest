@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class Path {
 
@@ -21,8 +20,7 @@ public class Path {
         System.out.println("2 - Center");
         System.out.println("3 - Right");
 
-        Scanner console = new Scanner(System.in);
-        int pathChoice = console.nextInt();
+        int pathChoice = PreGameInfo.input.nextInt();
 
         
         // Randomly determines if an encounter will happen (50% chance for example)
@@ -43,7 +41,6 @@ public class Path {
             System.out.println("The path before you is clear. Which path shall you take?");
             choosePath(difficulty); // Prompts the player to choose another path
         }
-        console.close();
     }
 
     /* Method to define actions for Left path
