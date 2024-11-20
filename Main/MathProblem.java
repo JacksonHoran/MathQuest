@@ -2,11 +2,15 @@ import java.util.Random;
 
 public class MathProblem {
 
-    /* makes a math problem with randomized operators and integer values,
-     * uses the random library to randomly choose the integers and uses a random boolean 
+    /*
+     * makes a math problem with randomized operators and integer values,
+     * uses the random library to randomly choose the integers and uses a random
+     * boolean
      * to decide which combinations of operators to use. the method uses a ternary
-     *  operator instead of an if/else statement to decide which equations skeleton to use
-     * the method returns true or false based on whether the user's answer is correct or incorrect.
+     * operator instead of an if/else statement to decide which equations skeleton
+     * to use
+     * the method returns true or false based on whether the user's answer is
+     * correct or incorrect.
      */
     @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif1() {
@@ -33,11 +37,15 @@ public class MathProblem {
         return userAnswer == result;
     }
 
-    /* makes a math problem with randomized operators and integer values,
-     * uses the random library to randomly choose the integers and uses a random boolean 
+    /*
+     * makes a math problem with randomized operators and integer values,
+     * uses the random library to randomly choose the integers and uses a random
+     * boolean
      * to decide which combinations of operators to use. the method uses a ternary
-     *  operator instead of an if/else statement to decide which equations skeleton to use
-     * the method returns true or false based on whether the user's answer is correct or incorrect.
+     * operator instead of an if/else statement to decide which equations skeleton
+     * to use
+     * the method returns true or false based on whether the user's answer is
+     * correct or incorrect.
      */
     @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif2() {
@@ -65,11 +73,15 @@ public class MathProblem {
         return result == userAnswer;
     }
 
-    /* makes a math problem with randomized operators and integer values,
-     * uses the random library to randomly choose the integers and uses a random boolean 
+    /*
+     * makes a math problem with randomized operators and integer values,
+     * uses the random library to randomly choose the integers and uses a random
+     * boolean
      * to decide which combinations of operators to use. the method uses a ternary
-     *  operator instead of an if/else statement to decide which equations skeleton to use
-     * the method returns true or false based on whether the user's answer is correct or incorrect.
+     * operator instead of an if/else statement to decide which equations skeleton
+     * to use
+     * the method returns true or false based on whether the user's answer is
+     * correct or incorrect.
      */
     @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif3() {
@@ -99,30 +111,32 @@ public class MathProblem {
         return result == userAnswer;
     }
 
-    /* this method will call the correct difficulty math problem method based 
-     * on the users input. This method takes the users chosen difficulty as a parameter 
-     * and prints the math problem to the console. */
-    public static boolean  getMathProblem(int difficulty) {
+    /*
+     * this method will call the correct difficulty math problem method based
+     * on the users input. This method takes the users chosen difficulty as a
+     * parameter
+     * and prints the math problem to the console.
+     */
+    public static boolean getMathProblem(int difficulty) {
         boolean isCorrect = true;
 
-        while (true) { 
+        while (true) {
             switch (difficulty) {
-            case 1 -> isCorrect = createMathProblem_Dif1();
-            case 2 -> isCorrect = createMathProblem_Dif2();
-            case 3 -> isCorrect = createMathProblem_Dif3();
-            default -> System.out.println("Invalid difficulty level. Choose 1, 2, or 3.");
-                
-        }
-        
-        
-        // informs the user whether they were correct or not
-        if (isCorrect) {
-            System.out.println("Correct! You defeated the monster!");
-            return true;
-        } else {
-            System.out.println("Incorrect! The monster defeated you!");
-            return false;
+                case 1 -> isCorrect = createMathProblem_Dif1();
+                case 2 -> isCorrect = createMathProblem_Dif2();
+                case 3 -> isCorrect = createMathProblem_Dif3();
+                default -> System.out.println("Invalid difficulty level. Choose 1, 2, or 3.");
+
+            }
+
+            // informs the user whether they were correct or not
+            if (isCorrect) {
+                System.out.println("Correct! You defeated the monster!");
+                return true;
+            } else {
+                System.out.println("Incorrect! The monster defeated you!");
+                return false;
+            }
         }
     }
-}
 }
