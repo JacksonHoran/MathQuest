@@ -5,7 +5,7 @@ public class Game {
 
 
   
-  public static void runGame{
+  public static void runGame(){
         //Asks player if they'd like to start the game, gets value of answer with scanner170, depending on answer "Y" or "N", boolean variable gameRunning will be set to true or false, and either do nothing or start game
        //ask player Y or N
    if{ //if the input is Y, the gameRunning variable is set to true, and the game starts.

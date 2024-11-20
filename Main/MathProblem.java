@@ -9,6 +9,7 @@ public class MathProblem {
      *  operator instead of an if/else statement to decide which equations skeleton to use
      * the method returns true or false based on whether the user's answer is correct or incorrect.
      */
+    @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif1() {
         Random random = new Random();
         Scanner input = new Scanner(System.in);
@@ -31,6 +32,7 @@ public class MathProblem {
 
         // returns whether user is correct or not
         int userAnswer = input.nextInt();
+        input.close();
         return userAnswer == result;
     }
 
@@ -40,6 +42,7 @@ public class MathProblem {
      *  operator instead of an if/else statement to decide which equations skeleton to use
      * the method returns true or false based on whether the user's answer is correct or incorrect.
      */
+    @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif2() {
         Random random = new Random();
         Scanner input = new Scanner(System.in);
@@ -63,6 +66,7 @@ public class MathProblem {
 
         // returns whether user is correct or incorrect
         int userAnswer = input.nextInt();
+        input.close();
         return result == userAnswer;
     }
 
@@ -72,6 +76,7 @@ public class MathProblem {
      *  operator instead of an if/else statement to decide which equations skeleton to use
      * the method returns true or false based on whether the user's answer is correct or incorrect.
      */
+    @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif3() {
         Random random = new Random();
         Scanner input = new Scanner(System.in);
@@ -96,35 +101,34 @@ public class MathProblem {
 
         // returns whether or not the user is correct
         int userAnswer = input.nextInt();
+        input.close();
         return result == userAnswer;
     }
 
     /* this method will call the correct difficulty math problem method based 
      * on the users input. This method takes the users chosen difficulty as a parameter 
      * and prints the math problem to the console. */
-    public static void getMathProblem(int difficulty) {
-        boolean isCorrect;
+    public static boolean  getMathProblem(int difficulty) {
+        boolean isCorrect = true;
 
-        switch (difficulty) {
-            case 1:
-                isCorrect = createMathProblem_Dif1();
-                break;
-            case 2:
-                isCorrect = createMathProblem_Dif2();
-                break;
-            case 3:
-                isCorrect = createMathProblem_Dif3();
-                break;
-            default:
-                System.out.println("Invalid difficulty level. Choose 1, 2, or 3.");
-                return;
+        while (true) { 
+            switch (difficulty) {
+            case 1 -> isCorrect = createMathProblem_Dif1();
+            case 2 -> isCorrect = createMathProblem_Dif2();
+            case 3 -> isCorrect = createMathProblem_Dif3();
+            default -> System.out.println("Invalid difficulty level. Choose 1, 2, or 3.");
+                
         }
-
+        
+        
         // informs the user whether they were correct or not
         if (isCorrect) {
             System.out.println("Correct! You defeated the monster!");
+            return true;
         } else {
             System.out.println("Incorrect! The monster defeated you!");
+            return false;
         }
     }
+}
 }

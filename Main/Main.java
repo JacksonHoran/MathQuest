@@ -2,15 +2,21 @@
 public class Main{
     public static void main(String[] args){
         while(PreGameInfo.runGame()){
-            String userName = PreGameInfo.getUsername();
-            int difficulty = PreGameInfo.getDifficulty();
-            
+            PreGameInfo.getUsername();
+            PreGameInfo.getDifficulty();
+            printRound(GameSettings.difficulty);
 
 
 
 
-            MathProblem.getMathProblem(difficulty); // gets a math problem given the users chosen difficulty
 
         }
+    }
+
+    private static void printRound(int difficulty){
+        Path.choosePath(difficulty);
+        Path.choosePath(difficulty);
+        Path.choosePath(difficulty);    
+        Path.choosePath(difficulty);
     }
 }

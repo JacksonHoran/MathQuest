@@ -1,13 +1,11 @@
-import java.util.Scanner;
 
 public class EnemyEncounter {
 
 // Use static private variables to manage shared state across all instances of the class in a controlled way.
 
-    private static int points = 0; // Tracks player's points earned through correct answers
-    private static int attemptCounter = 0; // Counts attempts per encounter
-    private static boolean gameRunning = true; // Controls if the game is active
-    private static Scanner scanner170 = new Scanner(System.in); // Scanner for user input
+    public static int points = 0; // Tracks player's points earned through correct answers
+    public static int attemptCounter = 0; // Counts attempts per encounter
+    public static boolean gameRunning = true; // Controls if the game is active
 
     /* Method to simulate an enemy encounter
      - Takes an integer parameter "difficulty" to decide the complexity of the math problem.
@@ -23,13 +21,8 @@ public class EnemyEncounter {
         boolean correctAnswer = false;
 
         while (!correctAnswer && attemptCounter < 4) {
-          // calls MathProblem to get a math problem answer based on difficulty
-            int correctAnswerValue = MathProblem.getMathprobem(difficulty); // Generates and interprets the correct answer
-            System.out.print("Enter your answer: ");
-            int userAnswer = scanner170.nextInt(); // Capture user's answer
-
-          // if statement to check validity for points / attempts
-            if (userAnswer == correctAnswerValue) {
+          // if ueer gets math problem calculate points based off attempts
+            if (MathProblem.getMathProblem(difficulty)) {
                 calculatePoints(); // Adds points based on number of attempts
                 correctAnswer = true;
             } else {
@@ -52,14 +45,11 @@ public class EnemyEncounter {
       - Updates the points variable each time the player answers correctly.
      */
     private static void calculatePoints() {
-        if (attemptCounter == 1) {
-            points += 4;
-        } else if (attemptCounter == 2) {
-            points += 3;
-        } else if (attemptCounter == 3) {
-            points += 2;
-        } else {
-            points += 1;
+        switch (attemptCounter) {
+            case 1 -> points += 4;
+            case 2 -> points += 3;
+            case 3 -> points += 2;
+            default -> points += 1;
         }
     }
 
