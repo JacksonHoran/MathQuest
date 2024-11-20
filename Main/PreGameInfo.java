@@ -13,8 +13,12 @@ public class PreGameInfo {
      */
     public static boolean runGame() {
         System.out.println("Would you like to start the game? Type yes or no.");
-        String userChoice = input.next().toLowerCase();
+        String userChoice = input.nextLine().toLowerCase();
         return userChoice.equals("yes");
+
+        // refactor such that the boolean is able to be changed throughout the program,
+        // in the case that
+        // user runs out of lives the game should end.
     }
 
     /*
@@ -42,5 +46,6 @@ public class PreGameInfo {
         System.out.println("2 - Medium");
         System.out.println("3 - Hard");
         difficulty = input.nextInt();
+
     }
 }

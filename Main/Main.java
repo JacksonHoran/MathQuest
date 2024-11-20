@@ -13,4 +13,14 @@ public class Main {
         Path.choosePath(difficulty);
         Path.choosePath(difficulty);
     }
+
+    public static int livesCounter;
+
+    public static void livesCounterInit() {
+        switch (PreGameInfo.difficulty) {
+            case 1 -> livesCounter = 1;
+            case 2 -> livesCounter = 2;
+            default -> livesCounter = 3;
+        }
+    }
 }

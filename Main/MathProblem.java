@@ -12,7 +12,6 @@ public class MathProblem {
      * the method returns true or false based on whether the user's answer is
      * correct or incorrect.
      */
-    @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif1() {
         Random random = new Random();
         // gets all the random info
@@ -33,7 +32,6 @@ public class MathProblem {
 
         // returns whether user is correct or not
         int userAnswer = PreGameInfo.input.nextInt();
-        PreGameInfo.input.close();
         return userAnswer == result;
     }
 
@@ -47,7 +45,6 @@ public class MathProblem {
      * the method returns true or false based on whether the user's answer is
      * correct or incorrect.
      */
-    @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif2() {
         Random random = new Random();
         // gets all random info
@@ -69,7 +66,6 @@ public class MathProblem {
 
         // returns whether user is correct or incorrect
         int userAnswer = PreGameInfo.input.nextInt();
-        PreGameInfo.input.close();
         return result == userAnswer;
     }
 
@@ -83,7 +79,6 @@ public class MathProblem {
      * the method returns true or false based on whether the user's answer is
      * correct or incorrect.
      */
-    @SuppressWarnings("ConvertToTryWithResources")
     public static boolean createMathProblem_Dif3() {
         Random random = new Random();
 
@@ -107,7 +102,6 @@ public class MathProblem {
 
         // returns whether or not the user is correct
         int userAnswer = PreGameInfo.input.nextInt();
-        PreGameInfo.input.close();
         return result == userAnswer;
     }
 
@@ -134,7 +128,12 @@ public class MathProblem {
                 System.out.println("Correct! You defeated the monster!");
                 return true;
             } else {
-                System.out.println("Incorrect! The monster defeated you!");
+                Main.livesCounter -= 1;
+                // if(Main.livesCounter = 0){
+                // game running boolean to false, ends game
+                // and prints message saying you lost.
+                // }
+                System.out.println("Incorrect! The monster defeated you! try again.");
                 return false;
             }
         }
