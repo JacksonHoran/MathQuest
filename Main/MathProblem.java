@@ -112,7 +112,7 @@ public class MathProblem {
      * and prints the math problem to the console.
      */
     public static boolean getMathProblem(int difficulty) {
-        boolean isCorrect = true;
+        boolean isCorrect = false;
 
         while (true) {
             switch (difficulty) {
@@ -126,20 +126,18 @@ public class MathProblem {
             // informs the user whether they were correct or not
             if (isCorrect) {
                 System.out.println("Correct! You defeated the monster!");
-                return true;
             } else {
-                Main.livesCounter -= 1; // Deduct a life for an incorrect answer
+                Main.livesCounter--;
                 if (Main.livesCounter <= 0) {
-                    Main.livesCounter = 0; // Ensure lives don't go negative
-                    PreGameInfo.runGame = false; // End the game
                     System.out.println("Incorrect! The monster defeated you! You have no lives left. Game over!");
-                    return false;
+                    PreGameInfo.runGame = false;
+                    break;
                 } else {
                     System.out.println(
                             "Incorrect! The monster defeated you! Try again. Lives remaining: " + Main.livesCounter);
-                    return false;
                 }
             }
         }
+        return isCorrect;
     }
 }
