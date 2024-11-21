@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class PreGameInfo {
 
     public static Scanner input = new Scanner(System.in);
+    
 
     /*
      * this method promts the user to decide whether or not they want to play the
@@ -15,9 +16,10 @@ public class PreGameInfo {
     public static boolean runGame;
 
     public static void runGameInit() {
-        System.out.println("Would you like to start the game? Type yes or no.");
-        String userChoice = input.nextLine().toLowerCase();
-        runGame = userChoice.equals("yes");
+        System.out.println("Welcome to MathQuest!!");
+        System.out.println("Would you like to start the game? Type Y or N.");
+        String userChoice = input.nextLine().toUpperCase();
+        runGame = userChoice.equals("Y");
 
         // refactor such that the boolean is able to be changed throughout the program,
         // in the case that
@@ -32,7 +34,7 @@ public class PreGameInfo {
     public static String userName;
 
     public static void getUsername() {
-        System.out.println("Please enter a username:");
+        System.out.println("Please enter your name:");
         userName = input.nextLine();
     }
 
