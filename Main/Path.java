@@ -26,15 +26,17 @@ public class Path {
         boolean encounter = random.nextBoolean();
 
         if (encounter) { // If there's an encounter
-            switch (pathChoice) {
-                case 1 -> leftPath(difficulty); // Calls Left path
-                case 2 -> centerPath(difficulty); // Calls Center path
-                case 3 -> rightPath(difficulty); // Calls Right path
-                default -> {
-                    System.out.println("Invalid choice. Please provide valid input.");
-                    choosePath(difficulty); // Prompts again for a valid path if input is invalid
-                }
+            if (pathChoice == 1) {
+                leftPath(difficulty); // Calls Left path
+            } else if (pathChoice == 2) {
+                centerPath(difficulty); // Calls Center path
+            } else if (pathChoice == 3) {
+                rightPath(difficulty); // Calls Right path
+            } else {
+                System.out.println("Invalid choice. Please provide valid input.");
+                choosePath(difficulty); // Prompts again for a valid path if input is invalid
             }
+
         } else {
             // If no encounter occurs
             System.out.println("The path before you is clear. Which path shall you take?");

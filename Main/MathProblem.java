@@ -115,29 +115,16 @@ public class MathProblem {
         boolean isCorrect = false;
 
         while (true) {
-            switch (difficulty) {
-                case 1 -> isCorrect = createMathProblem_Dif1();
-                case 2 -> isCorrect = createMathProblem_Dif2();
-                case 3 -> isCorrect = createMathProblem_Dif3();
-                default -> System.out.println("Invalid difficulty level. Choose 1, 2, or 3.");
-
-            }
-
-            // informs the user whether they were correct or not
-            if (isCorrect) {
-                System.out.println("Correct! You defeated the monster!");
+            if (difficulty == 1) {
+                isCorrect = createMathProblem_Dif1();
+            } else if (difficulty == 2) {
+                isCorrect = createMathProblem_Dif2();
+            } else if (difficulty == 3) {
+                isCorrect = createMathProblem_Dif3();
             } else {
-                Main.livesCounter--;
-                if (Main.livesCounter <= 0) {
-                    System.out.println("Incorrect! The monster defeated you! You have no lives left. Game over!");
-                    PreGameInfo.runGame = false;
-                    break;
-                } else {
-                    System.out.println(
-                            "Incorrect! The monster defeated you! Try again. Lives remaining: " + Main.livesCounter);
-                }
+                System.out.println("Invalid difficulty level. Choose 1, 2, or 3.");
             }
+            return isCorrect;
         }
-        return isCorrect;
     }
 }
