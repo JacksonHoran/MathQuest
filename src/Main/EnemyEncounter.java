@@ -35,6 +35,7 @@ public class EnemyEncounter {
     public static void encounter(int difficulty) {
         attemptCounter = 0; // Resets attempts for the current encounter
         boolean correctAnswer = false;
+        MonsterPrinter.printRandomMonster();
 
         while (!correctAnswer && attemptCounter < 4 && PreGameInfo.runGame) {
             // if ueer gets math problem calculate points based off attempts

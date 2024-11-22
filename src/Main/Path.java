@@ -20,27 +20,31 @@ public class Path {
         System.out.println("2 - Center");
         System.out.println("3 - Right");
 
-        int pathChoice = PreGameInfo.input.nextInt();
+        while (true) {
+            if (PreGameInfo.input.hasNextInt()) {
+                int pathChoice = PreGameInfo.input.nextInt();
+                int encounter = random.nextInt(2);
 
-        // Randomly determines if an encounter will happen (50% chance for example)
-        boolean encounter = random.nextBoolean();
+                if (encounter == 0 || encounter == 1) { // If there's an encounter
+                    if (pathChoice == 1) {
+                        leftPath(difficulty); // Calls Left path
+                        break;
+                    } else if (pathChoice == 2) {
+                        centerPath(difficulty); // Calls Center path
+                        break;
+                    } else if (pathChoice == 3) {
+                        rightPath(difficulty); // Calls Right path
+                        break;
+                    } else {
+                        System.out.println("Invalid choice. Please provide valid input.");
+                    }
 
-        if (encounter) { // If there's an encounter
-            if (pathChoice == 1) {
-                leftPath(difficulty); // Calls Left path
-            } else if (pathChoice == 2) {
-                centerPath(difficulty); // Calls Center path
-            } else if (pathChoice == 3) {
-                rightPath(difficulty); // Calls Right path
-            } else {
-                System.out.println("Invalid choice. Please provide valid input.");
-                choosePath(difficulty); // Prompts again for a valid path if input is invalid
+                } else {
+                    // If no encounter occurs
+                    System.out.println("The path before you is clear. Which path shall you take?");
+                    choosePath(difficulty); // Prompts the player to choose another path
+                }
             }
-
-        } else {
-            // If no encounter occurs
-            System.out.println("The path before you is clear. Which path shall you take?");
-            choosePath(difficulty); // Prompts the player to choose another path
         }
     }
 

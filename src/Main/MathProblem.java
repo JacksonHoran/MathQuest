@@ -57,7 +57,6 @@ public class MathProblem {
         int result = operators == '*' ? (num1 * num2) + num3 : num1 + num2 + num3;
 
         // shows user the equation
-        System.out.println("SOLVE THIS PROBLEM TO GET PAST THE MONSTER!");
         if (operators == '*') {
             System.out.println("(" + num1 + " * " + num2 + ")" + " + " + num3);
         } else {
