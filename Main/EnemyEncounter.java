@@ -7,8 +7,9 @@ public class EnemyEncounter {
     public static int points = 0; // Tracks player's points earned through correct answers
     public static int attemptCounter = 0; // Counts attempts per encounter
     public static boolean gameRunning = true; // Controls if the game is active
-    public static int livesCounter;
+    public static int livesCounter; // tracks number of liveds player has left
 
+    // needs pseudocode
     public static void livesCounterInit() {
         if (PreGameInfo.difficulty == 1) {
             livesCounter = 1;
@@ -19,6 +20,7 @@ public class EnemyEncounter {
         }
 
     }
+
     /*
      * Method to simulate an enemy encounter
      * - Takes an integer parameter "difficulty" to decide the complexity of the
@@ -39,9 +41,12 @@ public class EnemyEncounter {
             if (MathProblem.getMathProblem(difficulty)) {
                 calculatePoints(); // Adds points based on number of attempts
                 correctAnswer = true;
-            } else {
-                System.out.println("Incorrect! Try Again!");
+            } else if (attemptCounter == 3) {
+                System.out.println("Incorrect! The Monster defeated you!");
                 attemptCounter++; // Increments attemptCounter for each incorrect answer
+            } else {
+                System.out.println("Incorrect! Try Again.");
+                attemptCounter++;
             }
         }
 
@@ -55,6 +60,7 @@ public class EnemyEncounter {
         livesCounter--;
         if (livesCounter <= 0) {
             System.out.println("Game over, you've lost all your lives.");
+            Ending.showEnding(points);
             PreGameInfo.runGame = false;
         } else {
             System.out.println("The monster beat you, you have " + livesCounter + " lives left.");

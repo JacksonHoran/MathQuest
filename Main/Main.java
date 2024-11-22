@@ -1,3 +1,4 @@
+
 public class Main {
     public static void main(String[] args) {
         PreGameInfo.runGameInit();
@@ -10,7 +11,9 @@ public class Main {
     }
 
     private static void game(int difficulty) {
-        System.out.println("It seems you've found yourself in the middle of the forest, quite a ways from home.\nYou're not sure where you are or how you got here, but you're determined to find your way back.");
+        System.out.println(
+                "It seems you've found yourself in the middle of the forest, quite a ways from home. "
+                        + "You're not sure where you are or how you got here, but you're determined to find your way back.");
         System.out.println("Prepare yourself! The adventure begins...");
         int numOfPaths = difficulty + 2;
         for (int i = 0; i <= numOfPaths; i++) {
@@ -20,9 +23,9 @@ public class Main {
             if (!PreGameInfo.runGame) {
                 return;
             }
-            
-        }
 
+        }
+        Ending.showEnding(EnemyEncounter.points);
         System.out.println("Congratulations! You have successfully completed the adventure!");
     }
 
