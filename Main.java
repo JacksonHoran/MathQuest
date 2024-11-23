@@ -10,6 +10,7 @@ public class Main {
             break;
         }
     }
+    public static int pathsTraversed = 0;
 
     private static void game(int difficulty) {
         do {
@@ -23,17 +24,16 @@ public class Main {
             System.out.println("Prepare yourself! The adventure begins...");
 
             int numOfPaths = difficulty + 2;
-            for (int i = 0; i <= numOfPaths; i++) {
-                Path.choosePath(difficulty);
 
-                // Check if the game is still running
-                if (!PreGameInfo.runGame) {
-                    return; // Exit the game if the user chooses to quit
+
+            while (true) {
+                if (numOfPaths > pathsTraversed) {
+                    Path.choosePath(difficulty);
+                } else {
+                    Ending.showEnding(EnemyEncounter.points);
+                    break;
                 }
             }
-
-            Ending.showEnding(EnemyEncounter.points);
-
         } while (Ending.restartGame); // Restart the game if the player chooses to replay
 
         System.out.println("Congratulations! You have successfully completed the adventure!");
