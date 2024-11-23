@@ -48,7 +48,7 @@ public class Path {
                 } else {
                     // If no encounter occurs
                     EnemyEncounter.points += 4;
-                    main.pathsTraversed += 1;
+                    Main.pathsTraversed += 1;
                     System.out.println("The path before you is clear. Which path shall you take?");
                     choosePath(difficulty); // Prompts the player to choose another path
                 }
