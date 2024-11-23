@@ -26,9 +26,9 @@ public class MathProblem {
         // shows the user the equation
         System.out.println("SOLVE THIS PROBLEM TO GET PAST THE MONSTER!");
         if (operators == '+') {
-            System.out.println(num1 + " + " + num2);
+            System.out.println(num1 + " + " + num2 + " = ?");
         } else {
-            System.out.println(num1 + " - " + num2);
+            System.out.println(num1 + " - " + num2 + " = ?");
         }
         return userAnswer(result);
     }
@@ -56,9 +56,9 @@ public class MathProblem {
 
         // shows user the equation
         if (operators == '*') {
-            System.out.println("(" + num1 + " * " + num2 + ")" + " + " + num3);
+            System.out.println("(" + num1 + " * " + num2 + ")" + " + " + num3 + " = ?");
         } else {
-            System.out.println(num1 + " + " + num2 + " + " + num3);
+            System.out.println(num1 + " + " + num2 + " + " + num3 + " = ?");
         }
         return userAnswer(result);
 
@@ -91,10 +91,10 @@ public class MathProblem {
         System.out.println("SOLVE THIS PROBLEM TO GET PAST THE MONSTER!");
         if (operators == '*') {
             // if multiplication operator, print division then addition
-            System.out.println("(" + "(" + num1 + " * " + num2 + ")" + " - " + num3 + ")" + " + " + num4);
+            System.out.println("(" + "(" + num1 + " * " + num2 + ")" + " - " + num3 + ")" + " + " + num4 + " = ?");
         } else {
             // if addition operator, print multiplication then subtraction
-            System.out.println("(" + "(" + num1 + " * " + num2 + ")" + " * " + num3 + ")" + " - " + num4);
+            System.out.println("(" + "(" + num1 + " * " + num2 + ")" + " * " + num3 + ")" + " - " + num4 + " = ?");
         }
         return userAnswer(result);
     }
