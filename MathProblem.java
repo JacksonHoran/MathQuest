@@ -122,21 +122,22 @@ public class MathProblem {
 
     // Method to validate the user's answer
     private static boolean userAnswer(int correctAnswer) {
+        PreGameInfo.input.nextLine();
         System.out.print("Enter your answer: ");
+        Boolean isCorrect = false;
         try {
             // Parse user's input as an integer
             int userAnswer = Integer.parseInt(PreGameInfo.input.nextLine());
             if (userAnswer == correctAnswer) {
                 System.out.println("Correct! You defeated the monster.");
-                return true;
+                isCorrect = true;
             } else {
                 System.out.println("Incorrect! Try again.");
-                return false;
             }
         } catch (NumberFormatException e) {
             // Handle invalid input gracefully
             System.out.println("Invalid input. Please enter a number.");
-            return false;
         }
+        return isCorrect;
     }
 }
