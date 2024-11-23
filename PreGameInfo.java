@@ -4,13 +4,7 @@ public class PreGameInfo {
 
     public static Scanner input = new Scanner(System.in);
 
-    /*
-     * this method promts the user to decide whether or not they want to play the
-     * game
-     * if they ansere with yes, the while loop in main runs and if they answer no
-     * then
-     * the program ends
-     */
+    
 
     public static boolean runGame;
 
@@ -33,11 +27,7 @@ public class PreGameInfo {
         }
     }
 
-    /*
-     * //prompts user to enter their name, valid
-     * input contains no numbers or symbols, sets
-     * variable name to user input.
-     */
+    
     public static String userName;
 
     public static void getUsername() {
@@ -57,11 +47,7 @@ public class PreGameInfo {
         System.out.println("Welcome, " + userName + "!");
     }
 
-    /*
-     * uses Scanner170 to obtain input from the user. prints three options
-     * to the user and asks them to choose their desired difficulty. the method
-     * returns an integer value
-     */
+    
     public static int difficulty;
 
     public static void getDifficulty() {
