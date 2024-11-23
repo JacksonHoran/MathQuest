@@ -6,20 +6,7 @@ public class Path {
 
     private static final Random random = new Random(); // Random instance to determine if an encounter occurs
 
-    /*
-     * Method to prompt the user to choose a path
-     * - Prints options for different paths (Left, Center, Right).
-     * - Recieves user input as an integer.
-     * - Randomly determines if a monster encounter occurs with 2 to 1 odds favoring
-     * an encounter
-     * - If 0 or 1 -> call the encounter method for the chosen path.
-     * - If 2 -> informs the player that the path is clear and allows them to move
-     * forward
-     * (ie. choose another path.)
-     *
-     * PARAM - int diffculty
-     */
-
+    
 
     public static void choosePath(int difficulty) {
         String pathFile = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/src/Main/Monsters/path.txt";
@@ -80,34 +67,19 @@ public class Path {
         }
     }
 
-    /*
-     * Method to define actions for left path
-     * - Prints a message to the console.
-     * - Calls encounter method.
-     * PARAM - int difficulty
-     */
+    
     private static void leftPath(int difficulty) {
         System.out.println("You take the Left path, venturing into the unknown...");
         EnemyEncounter.encounter(difficulty);
     }
 
-    /*
-     * Method to define actions for Center path
-     * - Prints a message to the console.
-     * - Calls encounter method.
-     * PARAM - int difficulty
-     */
+    
     private static void centerPath(int difficulty) {
         System.out.println("You walk down the Center path, steady and cautious...");
         EnemyEncounter.encounter(difficulty);
     }
 
-    /*
-     * Method to define actions for Right path
-     * - Prints a message to the console.
-     * - Calls encounter method.
-     * PARAM - int difficulty
-     */
+   
     private static void rightPath(int difficulty) {
         System.out.println("You turn onto the Right path, feeling a sense of adventure...");
         EnemyEncounter.encounter(difficulty);
