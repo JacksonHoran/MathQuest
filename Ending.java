@@ -26,8 +26,15 @@ public class Ending {
           + "\ndisappearance went overlooked by your friends and family. Maybe if you were just a bit more "
           + "\nremarkable, a little better at math, people would have noticed your absence.";
     } else {
-      endingMessage = "Triumphantly, you return home to celebrations and joyous greetings!"
-          + "\nYou are hailed as a hero for overcoming impossible odds.";
+      endingMessage = "You dash into your town square, coming up upon the face of all of your neighbors, friends and family."
+        +"\nYour family accepts you into a warm embrace, happy and relieved to see you home."
+        +"\nThey lead you into the clearing that is reserved for large events and celebrations."
+        +"\nThey unveil a large feast, the table lined with all of your favorite dishes!"
+        +"\nThe townsfolk all sit together and eat while you recount what happened."
+        +"\nEveryone eagerly listens, riveted by your tales."
+        +"\nAll of those who listen marvel at how brave, strong, intelligent, and heroic you are."
+        +"\nThey also strangely mention how good at math you must be."
+        +"\nYou sigh, content, happy, safe, and home.(ENDING 3/3)";
     }
 
     System.out.println(endingMessage);
