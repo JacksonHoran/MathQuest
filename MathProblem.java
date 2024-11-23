@@ -105,43 +105,37 @@ public class MathProblem {
      * parameter
      * and prints the math problem to the console.
      */
+        // Method to select and call the appropriate math problem based on difficulty
     public static boolean getMathProblem(int difficulty) {
-        boolean isCorrect = false;
-
-        while (true) {
-            if (difficulty == 1) {
-                isCorrect = createMathProblem_Dif1();
-            } else if (difficulty == 2) {
-                isCorrect = createMathProblem_Dif2();
-            } else if (difficulty == 3) {
-                isCorrect = createMathProblem_Dif3();
-            } else {
-                System.out.println("Invalid difficulty level. Choose 1, 2, or 3.");
-            }
-            return isCorrect;
+        switch (difficulty) {
+            case 1:
+                return createMathProblem_Dif1();
+            case 2:
+                return createMathProblem_Dif2();
+            case 3:
+                return createMathProblem_Dif3();
+            default:
+                System.out.println("Invalid difficulty level. Please restart the game.");
+                return false;
         }
     }
 
-    private static boolean userAnswer(int result) {
-        int answer = 0;
-        while (true) {
-            if (PreGameInfo.input.hasNextInt()) { // checks for integer in buffer
-                answer = PreGameInfo.input.nextInt(); // updates integer
-                System.out.println();
-                break; // ends loop
-            } else { // asks for new input, clears buffer
-                System.out.println("Please enter an integer, try again.");
-                PreGameInfo.input.nextLine();
+    // Method to validate the user's answer
+    private static boolean userAnswer(int correctAnswer) {
+        System.out.print("Enter your answer: ");
+        try {
+            // Parse user's input as an integer
+            int userAnswer = Integer.parseInt(PreGameInfo.input.nextLine());
+            if (userAnswer == correctAnswer) {
+                System.out.println("Correct! You defeated the monster.");
+                return true;
+            } else {
+                System.out.println("Incorrect! Try again.");
+                return false;
             }
-        }
-
-        // Consumes new line escape character
-        PreGameInfo.input.nextLine();
-
-        if (answer == result) {
-            System.out.println("Correct!! You defeated the monster!"); // tell user they are correct.
-            return true;
-        } else {
+        } catch (NumberFormatException e) {
+            // Handle invalid input gracefully
+            System.out.println("Invalid input. Please enter a number.");
             return false;
         }
     }
