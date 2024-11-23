@@ -13,8 +13,8 @@ public class Ending {
           + "\nYou hear a commotion come from behind one of your neighbors homes…."
           + "\nYou go to investigate, only to find the monster that has eaten your entire village!!"
           + "\nIt appears you took too long on your journey home, leaving time for this monster to eat"
-          + "\neveryone you know!! As the creature approaches you, teeth bared, it growls. Maybe if you "
-          + "\nwere a little better at math, this wouldn’t have happened… You close your eyes, realizing he’s "
+          + "\neveryone you know!! As the creature approaches you, teeth bared, it growls. 'Maybe if you "
+          + "\nwere a little better at math, this wouldn’t have happened…' You close your eyes, realizing he’s "
           + "\nright, and accept your fate.";
     } else if (EnemyEncounter.points <= 22) {
       endingMessage = "You excitedly rush towards your village, relieved to be home."
