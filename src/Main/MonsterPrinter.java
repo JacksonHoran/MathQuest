@@ -14,24 +14,7 @@ public class MonsterPrinter {
         System.err.println();
 
         int num = random.nextInt(10) + 1;
-        String fileName = "src/Main/Monsters/monster" + num + ".txt"; // Build file path
-
-        // Get the absolute path of the project root directory
-        String projectRoot = System.getProperty("user.dir");
-
-        // Build the full path to the file
-        String fullPath = projectRoot + File.separator + fileName;
-
-        // Debug: Print the full path
-        System.out.println("Looking for file: " + fullPath);
-
-        File file = new File(fullPath);
-
-        // Check if the file exists before attempting to open it
-        if (!file.exists()) {
-            System.out.println("File not found: " + fullPath);
-            return;
-        }
+        String fileName = "C:/COMP170+271/COMP170_271/_my_Java_programs/src/MathQuest/src/Main/Monsters/monster" + num + ".txt"; // Build file path
 
         Scanner output = null;
 
