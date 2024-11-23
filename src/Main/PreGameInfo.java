@@ -18,7 +18,6 @@ public class PreGameInfo {
         while (true) {
             System.out.println("Welcome to MathQuest!!");
             System.out.println("Would you like to start the game? Type Y or N.");
-
             if (input.hasNext()) {
                 String userChoice = input.nextLine().trim().toUpperCase();
                 if (userChoice.equalsIgnoreCase("Y")) {
@@ -81,6 +80,7 @@ public class PreGameInfo {
                 }
             } else {
                 System.out.println("Invalid input, please try again.");
+                input.next();
             }
         }
     }

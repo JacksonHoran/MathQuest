@@ -2,6 +2,8 @@ import java.util.Random;
 
 public class MathProblem {
 
+    private static final double EPSILON = 1E-6;
+
     /*
      * makes a math problem with randomized operators and integer values,
      * uses the random library to randomly choose the integers and uses a random
@@ -65,7 +67,7 @@ public class MathProblem {
 
         // returns whether user is correct or incorrect
         int userAnswer = PreGameInfo.input.nextInt();
-        return result == userAnswer;
+        return userAnswer == result;
     }
 
     /*
@@ -89,19 +91,21 @@ public class MathProblem {
         char operators = random.nextBoolean() ? '*' : '+';
 
         // chooses equation format
-        int result = operators == '*' ? ((num1 * num2) / num3) + num4 : ((num1 / num2) * num3) + num4;
+        int result = operators == '*' ? ((num1 * num2) - num3) + num4 : ((num1 * num2) * num3) - num4;
 
         // shows user the equation
         System.out.println("SOLVE THIS PROBLEM TO GET PAST THE MONSTER!");
         if (operators == '*') {
-            System.out.println("(" + "(" + num1 + " * " + num2 + ")" + " / " + num3 + ")" + " + " + num4);
+            // if multiplication operator, print division then addition
+            System.out.println("(" + "(" + num1 + " * " + num2 + ")" + " - " + num3 + ")" + " + " + num4);
         } else {
-            System.out.println("(" + "(" + num1 + " / " + num2 + ")" + " * " + num3 + ")" + " + " + num4);
+            // if addition operator, print multiplication then subtraction
+            System.out.println("(" + "(" + num1 + " * " + num2 + ")" + " * " + num3 + ")" + " - " + num4);
         }
 
         // returns whether or not the user is correct
         int userAnswer = PreGameInfo.input.nextInt();
-        return result == userAnswer;
+        return userAnswer == result;
     }
 
     /*

@@ -38,16 +38,15 @@ public class EnemyEncounter {
         MonsterPrinter.printRandomMonster();
 
         while (!correctAnswer && attemptCounter < 4 && PreGameInfo.runGame) {
+            attemptCounter++;
             // if ueer gets math problem calculate points based off attempts
             if (MathProblem.getMathProblem(difficulty)) {
                 calculatePoints(); // Adds points based on number of attempts
                 correctAnswer = true;
-            } else if (attemptCounter == 3) {
+            } else if (attemptCounter == 4) {
                 System.out.println("Incorrect! The Monster defeated you!");
-                attemptCounter++; // Increments attemptCounter for each incorrect answer
             } else {
-                System.out.println("Incorrect! Try Again.");
-                attemptCounter++;
+                System.out.println("Incorrect!");
             }
         }
 
@@ -58,13 +57,17 @@ public class EnemyEncounter {
     }
 
     private static void loseLife() {
-        livesCounter--;
+        livesCounter--; // Deduct a life
+
         if (livesCounter <= 0) {
+            // Game over if no lives remain
             System.out.println("Game over, you've lost all your lives.");
-            Ending.showEnding(points);
-            PreGameInfo.runGame = false;
+            Ending.showEnding(points); // Show ending screen
+            PreGameInfo.runGame = false; // Stop the game
         } else {
+            // Print remaining lives if any are left
             System.out.println("The monster beat you, you have " + livesCounter + " lives left.");
+            // Allow the game to continue by not changing the runGame flag
         }
     }
 
