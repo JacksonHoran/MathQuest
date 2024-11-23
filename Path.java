@@ -5,28 +5,31 @@ import java.util.Scanner;
 public class Path {
 
     private static final Random random = new Random(); // Random instance to determine if an encounter occurs
+    
+    private static void printPath(){
+        String pathFile = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/src/Main/Monsters/path.txt";
+            Scanner output = null;
+    
+            System.out.println("It appears you've found another fork in the road...");
+            try {
+                output = new Scanner(new File(pathFile));
+            } catch (Exception e) {
+                System.out.println("An error occurred while opening the file.");
+                e.printStackTrace();
+                return;
+            }
+    
+            while (output.hasNextLine()) {
+                System.out.println(output.nextLine());
+            }
+            output.close();
+    }
 
     
 
     public static void choosePath(int difficulty) {
-        String pathFile = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/src/Main/Monsters/path.txt";
-        Scanner output = null;
-
-        System.out.println("It appears you've found another fork in the road...");
-        try {
-            output = new Scanner(new File(pathFile));
-        } catch (Exception e) {
-            System.out.println("An error occurred while opening the file.");
-            e.printStackTrace();
-            return;
-        }
-
-        while (output.hasNextLine()) {
-            System.out.println(output.nextLine());
-        }
-        output.close();
-
-
+        
+        printPath();
         System.out.println("It appears you've found another fork in the road...");
         System.out.println("");
         System.out.println("Choose a path by entering the number:");
