@@ -19,6 +19,8 @@ public class Path {
      */
 
     public static void choosePath(int difficulty) {
+        System.out.println("It appears you've found another fork in the road...");
+        System.out.println("");
         System.out.println("Choose a path by entering the number:");
         System.out.println("1 - Left");
         System.out.println("2 - Center");
