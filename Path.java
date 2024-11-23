@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.io.File;
+import java.util.Scanner;
 
 public class Path {
 
@@ -15,27 +16,30 @@ public class Path {
      * - If 2 -> informs the player that the path is clear and allows them to move
      * forward
      * (ie. choose another path.)
-     * 
+     *
      * PARAM - int diffculty
      */
-     String pathFile = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/src/Main/Monsters/path.txt";
-     Scanner out1 = null;
+
 
     public static void choosePath(int difficulty) {
+        String pathFile = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/src/Main/Monsters/path.txt";
+        Scanner output = null;
+
         System.out.println("It appears you've found another fork in the road...");
         try {
-            out1 = new Scanner(new File(pathFile));
+            output = new Scanner(new File(pathFile));
         } catch (Exception e) {
             System.out.println("An error occurred while opening the file.");
             e.printStackTrace();
             return;
         }
 
-        while (out1.hasNextLine()) {
-            System.out.println(out1.nextLine());
+        while (output.hasNextLine()) {
+            System.out.println(output.nextLine());
+        }
+        output.close();
 
-        
-        
+
         System.out.println("It appears you've found another fork in the road...");
         System.out.println("");
         System.out.println("Choose a path by entering the number:");
