@@ -43,8 +43,10 @@ public class EnemyEncounter {
             if (MathProblem.getMathProblem(difficulty)) {
                 calculatePoints(); // Adds points based on number of attempts
                 correctAnswer = true;
+                Main.pathsTraverse += 1;
             } else if (attemptCounter == 4) {
                 System.out.println("Incorrect! The Monster defeated you!");
+                Main.pathsTraversed += 1;
             } else {
                 System.out.println("Incorrect!");
             }
