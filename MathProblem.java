@@ -3,16 +3,7 @@ import java.util.Random;
 
 public class MathProblem {
 
-    /*
-     * makes a math problem with randomized operators and integer values,
-     * uses the random library to randomly choose the integers and uses a random
-     * boolean
-     * to decide which combinations of operators to use. the method uses a ternary
-     * operator instead of an if/else statement to decide which equations skeleton
-     * to use
-     * the method returns true or false based on whether the user's answer is
-     * correct or incorrect.
-     */
+    
     public static boolean createMathProblem_Dif1() {
         Random random = new Random();
         // gets all the random info
@@ -33,16 +24,7 @@ public class MathProblem {
         return userAnswer(result);
     }
 
-    /*
-     * makes a math problem with randomized operators and integer values,
-     * uses the random library to randomly choose the integers and uses a random
-     * boolean
-     * to decide which combinations of operators to use. the method uses a ternary
-     * operator instead of an if/else statement to decide which equations skeleton
-     * to use
-     * the method returns true or false based on whether the user's answer is
-     * correct or incorrect.
-     */
+   
     public static boolean createMathProblem_Dif2() {
         Random random = new Random();
         // gets all random info
@@ -99,13 +81,8 @@ public class MathProblem {
         return userAnswer(result);
     }
 
-    /*
-     * this method will call the correct difficulty math problem method based
-     * on the users input. This method takes the users chosen difficulty as a
-     * parameter
-     * and prints the math problem to the console.
-     */
-        // Method to select and call the appropriate math problem based on difficulty
+    
+     // Method to select and call the appropriate math problem based on difficulty
     public static boolean getMathProblem(int difficulty) {
         switch (difficulty) {
             case 1:
