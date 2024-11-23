@@ -42,20 +42,9 @@ public class Ending {
     System.out.println();
     System.out.println(userScore);
     System.out.println();
+    System.out.println("Thank you for playing!!!")
     
-
-    while (true) {
-      System.out.println("Would you like to restart the game? Type Y or N.");
-      String userChoice = PreGameInfo.input.nextLine().trim().toUpperCase();
-      if (userChoice.equals("Y")) {
-        restartGame = true;
-        break;
-      } else if (userChoice.equals("N")) {
-        restartGame = false;
-        break;
-      } else {
-        System.out.println("Invalid input, please try again.");
-      }
-    }
+      
+    
   }
 }
