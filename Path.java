@@ -37,35 +37,42 @@ public class Path {
         System.out.println("2 - Center");
         System.out.println("3 - Right");
 
-        while (true) { // while loop to unsure input is an integer
-            if (PreGameInfo.input.hasNextInt()) { // if user enters an integer
-                int pathChoice = Integer.parseInt(PreGameInfo.input.nextLine());
-                int encounter = random.nextInt(3);
-
-                if (encounter == 0 || encounter == 1) { // If there's an encounter
-                    if (pathChoice == 1) {
-                        leftPath(difficulty); // Calls Left path
-                        break;
-                    } else if (pathChoice == 2) {
-                        centerPath(difficulty); // Calls Center path
-                        break;
-                    } else if (pathChoice == 3) {
-                        rightPath(difficulty); // Calls Right path
-                        break;
+        while (true) {
+    
+            if (PreGameInfo.input.hasNextInt()) {
+                int pathChoice = PreGameInfo.input.nextInt(); // Directly read the integer
+                
+                // Check if the choice is valid
+                if (pathChoice >= 1 && pathChoice <= 3) {
+                    int encounter = random.nextInt(3);
+        
+                    if (encounter == 0 || encounter == 1) { // If there's an encounter
+                        if (pathChoice == 1) {
+                            leftPath(difficulty); // Calls Left path
+                            break; // Exit the loop after valid path choice
+                        } else if (pathChoice == 2) {
+                            centerPath(difficulty); // Calls Center path
+                            break; // Exit the loop after valid path choice
+                        } else if (pathChoice == 3) {
+                            rightPath(difficulty); // Calls Right path
+                            break; // Exit the loop after valid path choice
+                        }
                     } else {
-                        System.out.println("Invalid choice. Please provide valid input, try again.");
+                        // If no encounter occurs
+                        EnemyEncounter.points += 4;
+                        Main.pathsTraversed += 1;
+                        System.out.println("The path before you is clear. Which path shall you take?");
+                        choosePath(difficulty); // Prompts the player to choose another path
+                        break; // Exit loop after valid input and action
                     }
-
                 } else {
-                    // If no encounter occurs
-                    EnemyEncounter.points += 4;
-                    Main.pathsTraversed += 1;
-                    System.out.println("The path before you is clear. Which path shall you take?");
-                    choosePath(difficulty); // Prompts the player to choose another path
+                    // Invalid path choice (not between 1 and 3)
+                    System.out.println("Invalid choice. Please provide a valid number between 1 and 3.");
                 }
             } else {
-                System.out.println("Invalid choice. Please enter an integer beween 1 and 3, try again.");
-                PreGameInfo.input.next();
+                // Not an integer input
+                System.out.println("Invalid choice. Please enter an integer between 1 and 3.");
+                PreGameInfo.input.next(); // Consume the invalid input
             }
         }
     }
