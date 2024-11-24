@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.io.File;
-import java.util.Scanner;
 
 public class Path {
 
@@ -25,14 +24,14 @@ public class Path {
         String pathFile = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/Monsters/path.txt";
 
         // new scanner instance set to null because it gets closed by the try statement prematurely if it is created inside of it
-        Scanner output = null;
+        Scanner170 output = null;
 
         //prints narration
         System.out.println("It appears you've found another fork in the road...");
 
         // try/catch to get file 
         try {
-            output = new Scanner(new File(pathFile));
+            output = new Scanner170(new File(pathFile));
         } catch (Exception e) {
             System.out.println("An error occurred while opening the file.");
             e.printStackTrace();

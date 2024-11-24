@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.Random;
-import java.util.Scanner;
 
 public class MonsterPrinter {
 
@@ -33,11 +32,11 @@ public class MonsterPrinter {
         String fileName = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/Monsters/monster" + num + ".txt";
 
         // new scanner instance set to null because it gets closed by the try statement prematurely if it is created inside of it
-        Scanner output = null;
+        Scanner170 output = null;
 
         // try/catch to get file
         try {
-            output = new Scanner(new File(fileName));
+            output = new Scanner170(new File(fileName));
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred while opening the file.");
             return;

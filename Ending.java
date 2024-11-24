@@ -1,6 +1,13 @@
 public class Ending {
 
+    /*
+    this method prints an ending message to the console. there are three differnet options and 
+    users will get a different one depending on how many points they score. the method prints messages,
+    thats about it. it uses an if/else statement to determine whcih nethod to print, depending on total points.
+     */
     public static void showEnding() {
+
+        //determines which message
         String endingMessage;
         String userScore = PreGameInfo.userName + ", you scored " + EnemyEncounter.points + " total points!";
         if (EnemyEncounter.points <= 10) {
@@ -34,6 +41,7 @@ public class Ending {
                     + "\nYou sigh, content, happy, safe, and home.(ENDING 3/3)";
         }
 
+        // prints message
         System.out.println();
         System.out.println(endingMessage);
         System.out.println();

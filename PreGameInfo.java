@@ -1,9 +1,8 @@
-import java.util.Scanner;
 
 public class PreGameInfo {
 
     // initialize Scanner(System.in) for whole program
-    public static Scanner input = new Scanner(System.in);
+    public static Scanner170 input = new Scanner170(System.in);
 
     // define runGame boolean
     public static boolean runGame;
