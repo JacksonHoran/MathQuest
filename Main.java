@@ -5,11 +5,13 @@ public class Main {
         while (PreGameInfo.runGame) {
             PreGameInfo.getUsername();
             PreGameInfo.getDifficulty();
+            System.out.println(PreGameInfo.difficulty);
             EnemyEncounter.livesCounterInit();
             game(PreGameInfo.difficulty);
             break;
         }
     }
+
     public static int pathsTraversed = 0;
 
     private static void game(int difficulty) {
@@ -30,13 +32,12 @@ public class Main {
                 if (numOfPaths > pathsTraversed) {
                     Path.choosePath(difficulty);
                 } else {
-                    Ending.showEnding(EnemyEncounter.points);
+                    Ending.showEnding();
                     break;
                 }
             }
         } while (Ending.restartGame); // Restart the game if the player chooses to replay
 
-        System.out.println("Congratulations! You have successfully completed the adventure!");
+        System.out.println("Thank you for playing!!!");
     }
-
 }
