@@ -1,8 +1,5 @@
 public class Ending {
 
-    public static boolean restartGame;
-
-
     public static void showEnding() {
         String endingMessage;
         String userScore = PreGameInfo.userName + ", you scored " + EnemyEncounter.points + " total points!";
