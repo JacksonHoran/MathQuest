@@ -39,7 +39,7 @@ public class Path {
 
         while (true) { // while loop to unsure input is an integer
             if (PreGameInfo.input.hasNextInt()) { // if user enters an integer
-                int pathChoice = PreGameInfo.input.nextInt();
+                int pathChoice = Integer.parseInt(PreGameInfo.input.nextLine());
                 int encounter = random.nextInt(3);
 
                 if (encounter == 0 || encounter == 1) { // If there's an encounter
