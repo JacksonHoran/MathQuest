@@ -100,9 +100,11 @@ public class MathProblem {
     // Method to validate the user's answer
     private static boolean userAnswer(int correctAnswer) {
         System.out.print("Enter your answer: ");
-        Boolean isCorrect = false;
+        boolean isCorrect = false;
 
-        int userAnswer = Integer.parseInt(PreGameInfo.input.nexLine());
+        try {
+        // Read input and parse it to an integer
+        int userAnswer = Integer.parseInt(PreGameInfo.input.nextLine().trim());
 
         if (userAnswer == correctAnswer) {
             System.out.println("Correct! You defeated the monster.");
@@ -110,7 +112,10 @@ public class MathProblem {
         } else {
             System.out.println("Incorrect! Try again.");
         }
+    } catch (NumberFormatException e) {
+        System.out.println("Invalid input! Please enter a valid number.");
+    }
 
-        return isCorrect;
+    return isCorrect;
     }
 }
