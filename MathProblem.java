@@ -102,14 +102,14 @@ public class MathProblem {
         System.out.print("Enter your answer: ");
         Boolean isCorrect = false;
 
-        int userAnswer = PreGameInfo.input.nextInt();
+        int userAnswer = Integer.parseInt(PreGameInfo.input.nexLine());
+
         if (userAnswer == correctAnswer) {
             System.out.println("Correct! You defeated the monster.");
             isCorrect = true;
         } else {
             System.out.println("Incorrect! Try again.");
         }
-        PreGameInfo.input.nextLine();
 
         return isCorrect;
     }
