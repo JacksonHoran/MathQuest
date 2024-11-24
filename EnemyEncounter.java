@@ -6,19 +6,44 @@ public class EnemyEncounter {
     public static boolean gameRunning = true; // Controls if the game is active
     public static int livesCounter; // tracks number of liveds player has left
 
-    // needs pseudocode
+    /* 
+    helper method that initializes a count for the amount of lives the player gets.
+    1 life for easy mode, 2 for medium and 3 lives for hard mode
+    */
     public static void livesCounterInit() {
-        if (PreGameInfo.difficulty == 1) {
-            livesCounter = 1;
-        } else if (PreGameInfo.difficulty == 2) {
-            livesCounter = 2;
-        } else {
-            livesCounter = 3;
+        if (PreGameInfo.difficulty == 1) { //if user selects easy mode
+            livesCounter = 1; //add one to life counter
+        } else if (PreGameInfo.difficulty == 2) { //if user selects medium mode
+            livesCounter = 2; //add two to life counter
+        } else { //if user selects hard mode
+            livesCounter = 3; //add three to life counter
         }
 
     }
 
+    /*
+    method that simulates an encounter with a monster.
+    
+    initializes an attempt counter
+    initaizes a correct answer boolean to false
+    prints ASCII picture
 
+    while correctAnswer is false, attemps are less than 4, and game is running
+        increment attempt counter by one
+        get mathproblem, 
+            if user is correct
+                call calculate points
+                correctAnswer = true
+                increment pathsTraversed by one
+            if user is wrong and they reach max attempts
+                inform user they are wrong and the monster won
+                increment pathsTraversed by one
+            else
+                tell user theyre wrong, and get another math equation.
+                
+        if the user attempted 4 or more times, call loseLife()
+    
+    */
     public static void encounter(int difficulty) {
         attemptCounter = 0; // Resets attempts for the current encounter
         boolean correctAnswer = false;
