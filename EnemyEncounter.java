@@ -1,6 +1,4 @@
-
 public class EnemyEncounter {
-
 
 
     public static int points = 0; // Tracks player's points earned through correct answers
@@ -20,7 +18,6 @@ public class EnemyEncounter {
 
     }
 
-    
 
     public static void encounter(int difficulty) {
         attemptCounter = 0; // Resets attempts for the current encounter
@@ -39,6 +36,7 @@ public class EnemyEncounter {
                 Main.pathsTraversed += 1;
             } else {
                 System.out.println("Incorrect!");
+                System.out.println();
             }
         }
 
@@ -53,9 +51,9 @@ public class EnemyEncounter {
 
         if (livesCounter <= 0) {
             // Game over if no lives remain
+            System.out.println();
             System.out.println("Game over, you've lost all your lives.");
-            Ending.showEnding(points); // Show ending screen
-            PreGameInfo.runGame = false; // Stop the game
+            Main.pathsTraversed = 100;
         } else {
             // Print remaining lives if any are left
             System.out.println("The monster beat you, you have " + livesCounter + " lives left.");
@@ -63,7 +61,7 @@ public class EnemyEncounter {
         }
     }
 
-    
+
     private static void calculatePoints() {
         if (attemptCounter == 1) {
             points += 4;
