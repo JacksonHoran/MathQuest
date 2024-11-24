@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class MathProblem {
 
-    
+
     public static boolean createMathProblem_Dif1() {
         Random random = new Random();
         // gets all the random info
@@ -15,6 +15,7 @@ public class MathProblem {
         int result = operators == '+' ? num1 + num2 : num1 - num2;
 
         // shows the user the equation
+        System.out.println();
         System.out.println("SOLVE THIS PROBLEM TO GET PAST THE MONSTER!");
         if (operators == '+') {
             System.out.println(num1 + " + " + num2 + " = ?");
@@ -24,7 +25,7 @@ public class MathProblem {
         return userAnswer(result);
     }
 
-   
+
     public static boolean createMathProblem_Dif2() {
         Random random = new Random();
         // gets all random info
@@ -37,6 +38,8 @@ public class MathProblem {
         int result = operators == '*' ? (num1 * num2) + num3 : num1 + num2 + num3;
 
         // shows user the equation
+        System.out.println();
+        System.out.println("SOLVE THIS PROBLEM TO GET PAST THE MONSTER!");
         if (operators == '*') {
             System.out.println("(" + num1 + " * " + num2 + ")" + " + " + num3 + " = ?");
         } else {
@@ -70,6 +73,7 @@ public class MathProblem {
         int result = operators == '*' ? ((num1 * num2) - num3) + num4 : ((num1 * num2) * num3) - num4;
 
         // shows user the equation
+        System.out.println();
         System.out.println("SOLVE THIS PROBLEM TO GET PAST THE MONSTER!");
         if (operators == '*') {
             // if multiplication operator, print division then addition
@@ -81,8 +85,8 @@ public class MathProblem {
         return userAnswer(result);
     }
 
-    
-     // Method to select and call the appropriate math problem based on difficulty
+
+    // Method to select and call the appropriate math problem based on difficulty
     public static boolean getMathProblem(int difficulty) {
         switch (difficulty) {
             case 1:
@@ -103,19 +107,19 @@ public class MathProblem {
         boolean isCorrect = false;
 
         try {
-        // Read input and parse it to an integer
-        int userAnswer = Integer.parseInt(PreGameInfo.input.nextLine().trim());
+            // Read input and parse it to an integer
+            int userAnswer = Integer.parseInt(PreGameInfo.input.nextLine().trim());
 
-        if (userAnswer == correctAnswer) {
-            System.out.println("Correct! You defeated the monster.");
-            isCorrect = true;
-        } else {
-            System.out.println("Incorrect! Try again.");
+            if (userAnswer == correctAnswer) {
+                System.out.println("Correct! You defeated the monster.");
+                isCorrect = true;
+            } else {
+                System.out.println();
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input! Please enter a valid number.");
         }
-    } catch (NumberFormatException e) {
-        System.out.println("Invalid input! Please enter a valid number.");
-    }
 
-    return isCorrect;
+        return isCorrect;
     }
 }
