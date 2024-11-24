@@ -14,7 +14,7 @@ public class MonsterPrinter {
         System.out.println();
 
         int num = random.nextInt(10) + 1;
-        String fileName = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/src/Main/Monsters/monster" + num + ".txt";
+        String fileName = "C:/COMP170+271/COMP170+271/_my_Java_programs/src/MathQuest/Monsters/monster" + num + ".txt";
 
 
         Scanner output = null;
