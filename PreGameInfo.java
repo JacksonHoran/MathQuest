@@ -4,7 +4,6 @@ public class PreGameInfo {
 
     public static Scanner input = new Scanner(System.in);
 
-    
 
     public static boolean runGame;
 
@@ -27,7 +26,7 @@ public class PreGameInfo {
         }
     }
 
-    
+
     public static String userName;
 
     public static void getUsername() {
@@ -47,26 +46,28 @@ public class PreGameInfo {
         System.out.println("Welcome, " + userName + "!");
     }
 
-    
+
     public static int difficulty;
 
     public static void getDifficulty() {
-        while (true) {
-            System.out.println("Choose your difficulty by typing the number corresponding to difficulty level.");
-            System.out.println("1 - Easy");
-            System.out.println("2 - Medium");
-            System.out.println("3 - Hard");
 
-            if (input.hasNextInt()) {
-                difficulty = input.nextInt();
-                if (difficulty == 1 || difficulty == 2 || difficulty == 3) {
+        System.out.println("Choose your difficulty by typing the number corresponding to difficulty level.");
+        System.out.println("1 - Easy");
+        System.out.println("2 - Medium");
+        System.out.println("3 - Hard");
+
+        while (true) {
+            String choice = input.nextLine();
+            int parsedDifficulty = Integer.parseInt(choice);
+            try {
+                if (parsedDifficulty == 1 || parsedDifficulty == 2 || parsedDifficulty == 3) {
+                    difficulty = parsedDifficulty;
                     break;
                 } else {
-                    System.out.println("Invalid input, please try again");
+                    System.out.println("Invalid input. Please enter 1, 2, or 3.");
                 }
-            } else {
-                System.out.println("Invalid input, please try again.");
-                input.next();
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input, PLease enter 1, 2, or 3.");
             }
         }
     }
