@@ -19,6 +19,9 @@
 4. Have Fun!
 
 ## Project Structure
+Monsters directory
+- Holds all of the ASCII `.txt` files
+
 Main Class
 - Acts as a driver for the game
 
